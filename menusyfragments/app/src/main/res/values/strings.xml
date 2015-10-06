@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">menusyfragments</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_activity_con_fragment">ActivityConFragment</string>
+    <string name="title_activity_activity_ab">ActivityAB</string>
+</resources>
