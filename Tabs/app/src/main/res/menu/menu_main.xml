@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/action_settings"
+        android:title="Nuevo grupo"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/opcion2"
+        android:title="Nueva difusión"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/opcion3"
+        android:title="WhatsApp Web"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/opcion4"
+        android:title="Estado"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/opcion5"
+        android:title="Ajustes"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/opcion6"
+        android:title="OPC6"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_name2"
+        app:showAsAction="ifRoom|withText" />
+    <item android:id="@+id/opcion7"
+        android:title="OPc7"
+        android:icon="@drawable/ic_action_name3"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom|withText" />
+
+</menu>

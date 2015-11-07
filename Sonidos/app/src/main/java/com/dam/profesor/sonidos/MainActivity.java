@@ -15,6 +15,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     Button boton1;
     Button boton2;
     Button boton3;
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 // TODO Auto-generated method stub
             mediaPlayer.stop();
         }
+
+
 
 
 }
