@@ -22,6 +22,8 @@ public class BDAlumnos extends SQLiteOpenHelper {
         db.execSQL(sqlCreate);
 
 
+
+
     }
 
     @Override
