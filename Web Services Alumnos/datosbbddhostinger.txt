@@ -1,0 +1,4 @@
+BBDD: u296877284_fran
+Usuario: u296877284_fran
+Password: 123456
+Host_Mysql: mysql.hostinger.es
