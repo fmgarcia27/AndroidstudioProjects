@@ -1,6 +1,9 @@
 package com.dam.profesor.webservice;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Location location;
     LocationManager locationManager;
     LocationListener locationListener;
+    AlertDialog alert = null;
 
 
     @Override
@@ -57,6 +61,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         datos.setOnClickListener(this);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        /****Mejora****/
+        if ( !locationManager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
+            AlertNoGps();
+        }
+       /********/
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
@@ -111,6 +121,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /*-----*/
 
 
+    }
+
+    private void AlertNoGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("El sistema GPS esta desactivado, ¿Desea activarlo?")
+                .setCancelable(false)
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        dialog.cancel();
+                    }
+                });
+        alert = builder.create();
+        alert.show();
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        if(alert != null)
+        {
+            alert.dismiss ();
+        }
     }
 
     @Override
